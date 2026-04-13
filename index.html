@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GIS + AI Analysis</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>GIS + AI Analysis</h1>
+    <p>Geospatial analysis, cross-platform validation, and AI-assisted workflow evaluation</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('project1')">Project 1</button>
+    <button onclick="showSection('project2')">Project 2</button>
+  </nav>
+
+  <main>
+    <!-- Project 1 -->
+    <section id="project1" class="content active">
+      <h2>Project 1: Cross-Platform Hotspot Analysis (ArcGIS → QGIS)</h2>
+
+      <h3>Background</h3>
+      <p>
+        This project originates from an academic analysis conducted in 2017, which examined fatal incidents in Grand Canyon National Park using Esri’s ArcGIS platform. 
+        The original workflow utilized the Spatial Analyst extension, specifically the Getis-Ord Gi* Hot Spot Analysis tool, to identify statistically significant clusters of high and low incident concentrations.
+      </p>
+
+      <h3>Objective</h3>
+      <p>
+        Rather than simply recreating the original map, the goal of this project was to validate and reproduce the same analytical methodology using QGIS as a cross-platform exercise. 
+        This demonstrates that geospatial analysis is driven by methodological understanding rather than reliance on a specific software environment.
+      </p>
+
+      <h3>Methodology</h3>
+      <p>
+        The original dataset, derived from the book <em>Over the Edge: Death in Grand Canyon</em>, was reused for this analysis. 
+        Incident locations and associated attributes were imported into QGIS, where comparable spatial statistical processes were implemented to replicate the original workflow.
+      </p>
+
+      <p>
+        While the underlying tools differ between ArcGIS and QGIS, the analytical approach remained consistent:
+      </p>
+
+      <ul>
+        <li>Preparation and validation of spatial incident data</li>
+        <li>Selection of an appropriate spatial statistical method</li>
+        <li>Execution of hotspot analysis to identify clustering patterns</li>
+        <li>Visualization of statistically significant results</li>
+      </ul>
+
+      <h3>Results</h3>
+      <p>
+        The resulting spatial patterns closely replicate those observed in the original 2017 analysis. Areas previously identified as statistically significant hotspots remain consistent, reinforcing the reliability and reproducibility of the analytical approach across different GIS platforms.
+      </p>
+
+      <h3>Key Takeaways</h3>
+      <p>
+        This work emphasizes the importance of understanding spatial analytical principles, enabling workflows to be translated, validated, and applied across different geospatial technologies.
+      </p>
+
+      <h4>2017 ArcMap Results</h4>
+      <img src="images/Original_Project.png" style="width:100%; margin-top:10px;">
+
+      <h4>2026 QGIS Results</h4>
+      <img src="images/Convertion_Project.png" style="width:100%; margin-top:10px;">
+    </section>
+
+    <!-- Project 2 -->
+    <section id="project2" class="content">
+      <h2>Project 2: AI-Assisted Geospatial Workflow Evaluation</h2>
+
+      <h3>Objective</h3>
+      <p>
+        The objective of this project was to evaluate the effectiveness of an AI-generated geospatial analysis workflow by comparing its recommendations against a real-world implementation in QGIS. 
+        This exercise focuses on assessing whether AI-generated guidance can produce valid, repeatable spatial analysis results.
+      </p>
+
+      <h3>AI Prompt</h3>
+      <p>
+        A general prompt was provided to an AI system to generate a repeatable geospatial workflow:
+      </p>
+
+      <blockquote>
+        A GIS analyst has been provided with a spatial dataset containing incident locations and associated incident types. Describe a general, repeatable geospatial analysis workflow that could be used to determine which incident types are most common in different locations. Do not reference any specific software. Instead, focus on the methodological steps required to prepare the data, define spatial comparison areas, summarize incident patterns, and validate the results.
+      </blockquote>
+
+      <h3>AI-Generated Approach</h3>
+      <p>
+        The AI response outlined a structured workflow that included data preparation, spatial aggregation using grids or administrative boundaries, and summarization of incident counts within defined spatial units. 
+        It also recommended the use of density analysis and hotspot detection techniques to identify patterns.
+      </p>
+
+      <h3>Methodology (QGIS Implementation)</h3>
+      <p>
+        To evaluate the AI-generated workflow, a subset of the dataset was filtered to include environmental incidents. A hexagonal grid was generated over the study area to serve as a uniform spatial aggregation framework.
+      </p>
+
+      <p>
+        This implementation represents a scoped application of the AI-recommended workflow, focusing on a single incident type to validate the aggregation approach before expanding to comparative analysis.
+      </p>
+
+      <ul>
+        <li>Creation of a hexagonal tessellation to define spatial comparison units</li>
+        <li>Spatial join of incident points to hexagonal polygons</li>
+        <li>Aggregation of incident counts within each hexagon</li>
+        <li>Application of graduated symbology to visualize spatial intensity</li>
+        <li>Conditional labeling applied to emphasize higher-density areas</li>
+      </ul>
+
+      <h3>Results</h3>
+      <p>
+        The resulting map clearly identifies areas of concentrated environmental incidents, with distinct clustering observed in specific regions of the study area. 
+        The use of hexagonal aggregation provided a structured and consistent method for summarizing spatial patterns, improving interpretability compared to raw point distributions.
+      </p>
+
+      <h3>Evaluation of AI Response</h3>
+      <p>
+        The AI-generated workflow provided a strong conceptual foundation, particularly in recommending spatial aggregation and pattern analysis techniques. 
+        However, the original prompt aimed to determine which incident types are most common across different locations, which introduces a categorical comparison component.
+      </p>
+
+      <p>
+        The implemented workflow focused on a single incident category (environmental incidents) to establish a clear and interpretable aggregation method. 
+        This allowed for validation of the spatial summarization approach, but does not independently answer the full comparative aspect of the original question.
+      </p>
+
+      <p>
+        To fully address the prompt, the same workflow would need to be repeated across multiple incident types, with results compared to identify dominant patterns in each location. 
+        This highlights a key limitation of the AI response, which did not explicitly define how categorical comparisons should be operationalized in practice.
+      </p>
+
+      <p>
+        Overall, the AI-generated methodology was directionally correct, but required refinement and scoping to produce a clear, repeatable, and interpretable analytical outcome.
+      </p>
+
+      <p>
+        This evaluation demonstrates the importance of interpreting AI-generated guidance critically, ensuring that analytical workflows not only execute correctly, but also fully address the intended research question.
+      </p>
+
+      <h3>Key Takeaways</h3>
+      <p>
+        This project demonstrates that AI can effectively assist in outlining geospatial methodologies, but human expertise remains essential for refining, implementing, and validating those workflows. 
+        The resulting process is repeatable and can be applied to other datasets and incident types, making it a flexible approach for spatial analysis.
+      </p>
+
+      <img src="images/Spatial_Distribution_Project.png" style="width:100%; margin-top:20px;">
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
